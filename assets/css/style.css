@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    height: 90px;
+    z-index: 1;
+}
+
+#header .logo {
+    display: inline-block;
+    padding-left: 50px;
+}
+
+#header .logo img {
+    width: 90px;
+}
+
+#header .navigation {
+    height: 90px;
+    float: right;
+    margin-right: 40px;
+}
+
+#header .navigation li {
+    display: inline-block;
+    padding: 0 16px;
+    list-style-type: none;
+    cursor: pointer;
+}
+
+#header .navigation li a {
+    display: block;
+    line-height: 90px;
+    font-size: 25px;
+    text-decoration: none;
+    background: -webkit-linear-gradient(150deg, rgb(236, 99, 99), rgb(22, 13, 5), rgb(171, 191, 22));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#container {
+    margin-top: 90px;
+}
+
+#container .background {
+    background: url("/assets/img/background-container.jpg") top center / cover no-repeat;
+    padding-top: 50%;
+}
+
+
+/* ================================================================================================================= */
+
+
+.modal {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .modal__container {
+    width: 250px;
+    height: 320px;
+    background-color: #6f90c4;
+    padding: 30px;
+    position: relative;
+
+    animation: modalFadeIn ease .2s;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal .heading {
+    color: #fff;
+    text-align: center;
+    margin-top: 16px;
+}
+
+.modal input {
+    width: 100%;
+    color: #000;
+    background-color: #6f90c4;
+    border: none;
+    border-bottom: 1px solid #000;
+
+    padding: 4px 0;
+    outline: none;
+    font-size: 14px;
+}
+
+.modal input+input {
+    margin-top: 18px;
+}
+
+.modal input::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.modal .user-name {
+    margin-top: 30px;
+}
+
+.modal button,
+.modal .submit {
+    color: #fff;
+    cursor: pointer;
+    margin-top: 28px;
+    border: none;
+}
+
+.modal .submit {
+    background-color: red;
+}
+
+.modal .modal__goback,
+.modal .modal__close-btn {
+    position: absolute;
+    top: 0;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.modal .modal__goback {
+    left: 0;
+}
+
+.modal .modal__close-btn {
+    right: 0;
+}
+
+.modal .register-btn {
+    background-color: #6f90c4;
+}
+
+.modal.register .modal__container {
+    height: 442px;
+}
+
+@keyframes modalFadeIn {
+
+    /* Chỉ là chuyển động theo chiều y (có thể thêm opacity cho đẹp thôi)  */
+    from {
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================================================================================================= */
+
+.movies-list {
+    background-color: #000;
+    margin-top: 90px;
+}
+
+.movies-list .item .title {
+    color: #fff;
+}
+
+.movies-list .row {
+    padding-top: 40px;
+}
+
+.movies-list .item {
+    background-color: #333;
+    text-align: center;
+}
+
+.movies-list .movie-img img {
+    width: 80%;
+}
+
+.movies-list .movie-item:hover {
+    opacity: 0.8;
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+
+/* ================================================================================================================= */
+
+#booking {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #333;
+}
+
+#booking .seat-type-selection {
+    margin: 32px 0;
+    padding: 20px;
+}
+
+#booking .seat-type-selection select {
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-left: 16px;
+}
+
+#booking .seat-status {
+    background: rgba(0,0,0,0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#booking .seat-status .seat:not(.occupied):hover {
+    cursor: default;
+    transform: scale(1);
+}
+
+#booking .seat-status li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+#booking .seat-status li p {
+    margin-left: 12px;
+}
+
+#booking .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+#booking .screen {
+    background-color: #fff;
+    display: inline-block;
+    width: 100%;
+    height: 120px;
+    margin: 15px 0;
+    transform: rotateX(-48deg);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5);
+}
+
+#booking .row-seat {
+    display: flex;
+}
+
+#booking .seat {
+    background-color: red;
+    width: 15px;
+    height: 12px;
+    margin: 2px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#booking .seat.selected {
+    background-color: green;
+}
+
+#booking .seat.occupied {
+    background-color: #fff;
+}
+
+#booking .seat:nth-of-type(2) {
+    margin-right: 18px;
+}
+
+#booking .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+}
+
+#booking .seat:not(.occupied):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}

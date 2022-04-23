@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./assets/font/styleindex.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
     <div id="header">
+        <div class="logo">
+            <img src="./assets/img/logo.png" alt="logo-img">
+        </div>
+
         <ul class="navigation">
-            <div class="logo">
-                <img class="logo-img" src="./assets/img/logo.png" alt="">
-            </div>
-            <li><a href="">LogOut</a></li>
-            <li><a href="">LogIn</a></li>
-            <li><a href="">Bookings</a></li>
-            <li><a href="">Movies</a></li>
-            <li><a href="">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./movie.html">Movies</a></li>
+            <li><a href="./booking.html">Bookings</a></li>
+            <li class="js-login-btn"><a>Login</a></li>
         </ul>
     </div>
 
@@ -33,17 +36,100 @@
 
     </div>
 
+    <!-- Modal -->
+    <div class="modal js-modal login js-login">
+        <div class="modal__container js-modal__container">
+            <div class="modal__close-btn js-modal__close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
 
-    <div class="log-in">
-        <div class="container">
             <h1 class="heading">Login</h1>
-            <input placeholder="Username" type="text" class="user-name">
-            <input placeholder="Password" type="text" class="password">
-            <button class="submit">Submit</button>
+            <form action="">
+                <input type="text" placeholder="Username" required class="user-name">
+                <input type="text" placeholder="Password" required class="password">
+                <input type="submit" class="submit js-submit" value="Submit">
+            </form>
 
-            <p class="register"><a href="" class="">Don't have an account?</a></p>
+
+            <button class="register-btn js-register-btn">Don't have an account?</button>
         </div>
     </div>
+
+    <div class="modal js-modal register js-register">
+        <div class="modal__container js-modal__container">
+            <div class="modal__close-btn js-modal__close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+
+            <div class="modal__goback js-login-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+            </div>
+
+            <h1 class="heading">Register</h1>
+
+            <form action="">
+
+                <input type="text" placeholder="Username" required class="user-name">
+                <input type="date" placeholder="Date Of Birth" required class="date">
+                <input type="email" placeholder="Email" required class="email">
+                <input type="text" placeholder="Phone number" required class="phone-number">
+                <input type="text" placeholder="Password" required class="password">
+                <input type="text" placeholder="Confirm Password" required class="confirm-password">
+
+                <input type="submit" class="submit js-submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <!-- <script>
+        const loginModal = document.querySelector('.js-login')
+        const registerModal = document.querySelector('.js-register')
+        const loginBtns = document.querySelectorAll('.js-login-btn')
+        const registerBtn = document.querySelector('.js-register-btn')
+
+        const modalCloseBtns = document.querySelectorAll('.js-modal__close-btn')
+        const modals = document.querySelectorAll('.js-modal')
+        const modalContainers = document.querySelectorAll('.js-modal__container')
+
+        function showLoginModal() {
+            loginModal.classList.add('open')
+            registerModal.classList.remove('open')
+        }
+
+        function showRegisterModal() {
+            loginModal.classList.remove('open')
+            registerModal.classList.add('open')
+        }
+
+        function hideModal() {
+            loginModal.classList.remove('open')
+            registerModal.classList.remove('open')
+        }
+
+
+        for (const loginBtn of loginBtns) {
+            loginBtn.addEventListener('click', showLoginModal)
+        }
+
+        registerBtn.addEventListener('click', showRegisterModal)
+
+        for (const closeBtn of modalCloseBtns) {
+            closeBtn.addEventListener('click', hideModal)
+        }
+
+        for (const modal of modals) {
+            modal.addEventListener('click', hideModal)
+        }
+
+        for (const modalContainer of modalContainers) {
+            modalContainer.addEventListener('click', function (event) {
+                event.stopPropagation()
+            })
+        }
+    </script> -->
+
+    <script src="./main.js"></script>
 </body>
+
 
 </html>
