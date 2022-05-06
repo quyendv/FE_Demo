@@ -1,3 +1,12 @@
+/***********  Common property  ***********/
+
+:root {
+    --header-height: 80px;
+    --white-color: #fff;
+    --body-bg:  #131313;
+    --box-color: #221f1f;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,137 +15,288 @@
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Cario', Arial,  sans-serif;
 }
 
+body {
+    background-color: var(--body-bg);
+}
+
+/* ******************************************************** */
+/*         *************  Header  **********                */
+/* ******************************************************** */
 
 #header {
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
-    height: 90px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--body-bg);
+    height: var(--header-height);
     z-index: 1;
 }
 
 #header .logo {
     display: inline-block;
-    padding-left: 50px;
+    width: var(--header-height);
+    height: var(--header-height);
+    text-align: center;
 }
 
-#header .logo img {
-    width: 90px;
+#header .logo-icon {
+    font-size: 50px;
+    text-align: center;
+    line-height: var(--header-height);
+    color: red;
 }
 
 #header .navigation {
-    height: 90px;
-    float: right;
+    height: var(--header-height);
     margin-right: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #header .navigation li {
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: 0 16px;
     list-style-type: none;
     cursor: pointer;
 }
 
+#header .navigation li:hover a {
+    color: #9518fc;
+    /* color: #e8371f; */
+    /* transition: all 0.3s ease; */
+}
+
 #header .navigation li a {
     display: block;
-    line-height: 90px;
     font-size: 25px;
+    padding: 4px 10px;
     text-decoration: none;
-    background: -webkit-linear-gradient(150deg, rgb(236, 99, 99), rgb(22, 13, 5), rgb(171, 191, 22));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: var(--white-color);
+    transition: all 0.3s ease;
 }
 
-#container {
-    margin-top: 90px;
+#header .login-btn > a {
+    background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);
 }
 
-#container .background {
+#header #mobile-menu {
+    position: relative;
+    right: 5%;
+    cursor: pointer;
+    display: none;
+}
+
+#header #mobile-menu .toggle-bar {
+    background-color: var(--white-color);
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in-out; 
+}
+
+#header #mobile-menu.active .toggle-bar:nth-of-type(2) {
+    opacity: 0;
+}
+
+#header #mobile-menu.active .toggle-bar:first-of-type {
+    transform: translateY(8px) rotate(45deg);
+}
+
+#header #mobile-menu.active .toggle-bar:last-of-type {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* ******************************************************** */
+/*         *************  Banner  **********                */
+/* ******************************************************** */
+
+#banner {
+    margin-top: var(--header-height);
+}
+
+#banner .background {
     background: url("/assets/img/background-container.jpg") top center / cover no-repeat;
     padding-top: 50%;
 }
 
 
-/* ================================================================================================================= */
-
+/* ******************************************************** */
+/*         *********  Login/Register *******                */
+/* ******************************************************** */
 
 .modal {
     position: fixed;
-    display: none;
     top: 0;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+
+    /* background-color: rgba(0, 0, 0, 0.4); */
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);
+    display: none;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
-}
-
-.modal .modal__container {
-    width: 250px;
-    height: 320px;
-    background-color: #6f90c4;
-    padding: 30px;
-    position: relative;
-
-    animation: modalFadeIn ease .2s;
 }
 
 .modal.open {
     display: flex;
 }
 
-.modal .heading {
-    color: #fff;
-    text-align: center;
-    margin-top: 16px;
-}
-
-.modal input {
+.modal .modal__container {
     width: 100%;
-    color: #000;
-    background-color: #6f90c4;
-    border: none;
-    border-bottom: 1px solid #000;
+    max-width: 700px;
+    background-color: var(--white-color);
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
 
-    padding: 4px 0;
+    position: relative;
+
+    animation: modalFadeIn ease .2s;
+}
+
+.modal .heading {
+    font-size: 25px;
+    text-align: center;
+}
+
+.modal .content .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px 0 12px;
+}
+
+.modal .user-details .input-box {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0 12px;
+    display: block;
+}
+
+.modal .input-box label.info {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.modal .input-box input {
+    width: 100%;
+    padding: 10px;
     outline: none;
-    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    border-bottom-width: 2px;
 }
 
-.modal input+input {
-    margin-top: 18px;
+.modal .input-box input:focus,
+.modal .input-box input:valid {
+    border-color: #9b59b6;
 }
 
-.modal input::placeholder {
-    color: #fff;
-    opacity: 0.8;
+.modal .gender-details .gender-title {
+    /* font-size: 16px; */
+    font-weight: 600;
 }
 
-.modal .user-name {
-    margin-top: 30px;
+.modal .gender-details .category {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 14px 0;
 }
 
-.modal button,
-.modal .submit {
-    color: #fff;
-    cursor: pointer;
-    margin-top: 28px;
+.modal .gender-details .category label {
+    display: flex;
+    align-items: center;
+}
+
+.modal .gender-details .category .custom-dot {
+    /* display: inline-block; */ /* hoặc cho thẻ cha (label) có display flex */
+    width: 18px;
+    height: 18px;
+    background-color: #d9d9d9;
+    border-radius: 50%;
+    border: 5px solid transparent;
+    margin-right: 10px;
+    transition: all 0.3 ease;
+}
+
+.modal .gender-details #dot-1:checked ~ /* .modal */ .category .one,
+.modal .gender-details #dot-2:checked ~ /* .modal */ .category .two,
+.modal .gender-details #dot-3:checked ~ /* .modal */ .category .three {
+    border-color: #d9d9d9;
+    background-color: #9b59b6;
+}
+
+.modal .gender-details input[type='radio'] {
+    display: none;
+}
+
+.modal .submit-btn {
+    margin: 45px 0 30px;
+    height: 45px;
+}
+
+.modal .submit-btn input {
+    width: 100%;
+    height: 100%;
+    outline: none;
     border: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #71b7e6, #9b59b6);  
+    transition: all 0.3 ease;  
 }
 
-.modal .submit {
-    background-color: red;
+.modal .submit-btn input:hover {
+    background: linear-gradient(-135deg, #71b7e6, #9b59b6);   
+}
+
+.modal.login .register-btn {
+    border: none;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+    background-color: transparent;
+    transition: all 0.3 ease;
+}
+
+.modal.login .register-btn:hover {
+    color: red;
+    
 }
 
 .modal .modal__goback,
 .modal .modal__close-btn {
     position: absolute;
     top: 0;
+    font-size: 20px;
     padding: 16px;
     cursor: pointer;
 }
@@ -149,17 +309,7 @@ html {
     right: 0;
 }
 
-.modal .register-btn {
-    background-color: #6f90c4;
-}
-
-.modal.register .modal__container {
-    height: 442px;
-}
-
 @keyframes modalFadeIn {
-
-    /* Chỉ là chuyển động theo chiều y (có thể thêm opacity cho đẹp thôi)  */
     from {
         opacity: 0;
         transform: translateY(-150px);
@@ -171,40 +321,49 @@ html {
     }
 }
 
-/* ================================================================================================================= */
+/* ******************************************************** */
+/*                   *****  Movie  *****                    */
+/* ******************************************************** */
 
-.movies-list {
-    background-color: #000;
-    margin-top: 90px;
+#movies {
+    /* background-color: var(--white-color); */
+    padding-top: var(--header-height);
 }
 
-.movies-list .item .title {
-    color: #fff;
+#movies .movies-list {
+    padding-top: 16px;
 }
 
-.movies-list .row {
-    padding-top: 40px;
+#movies .row {
+
 }
 
-.movies-list .item {
-    background-color: #333;
+#movies .movie-item {
     text-align: center;
+    margin-bottom: 12px;
 }
 
-.movies-list .movie-img img {
+#movies .movie-item .title {
+    color: var(--white-color);
+}
+
+#movies .movie-img img {
     width: 80%;
 }
 
-.movies-list .movie-item:hover {
+#movies .movie-item:hover {
     opacity: 0.8;
     cursor: pointer;
     transform: translateY(-5px);
 }
 
 
-/* ================================================================================================================= */
+/* ******************************************************** */
+/*          ***********  Booking  **********                */
+/* ******************************************************** */
 
 #booking {
+    margin-top: var(--header-height);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -212,27 +371,29 @@ html {
     background-color: #333;
 }
 
-#booking .seat-type-selection {
+/* #booking .ticket-select {
     margin: 32px 0;
     padding: 20px;
+    color: var(--white-color);
 }
 
-#booking .seat-type-selection select {
+#booking .ticket-select select {
     font-size: 16px;
     border: none;
     border-radius: 5px;
     padding: 5px 15px;
     margin-left: 16px;
-}
+} */
 
 #booking .seat-status {
     background: rgba(0,0,0,0.1);
-    padding: 5px 10px;
+    padding:5px 10px;
     border-radius: 5px;
     color: #777;
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+    margin-top: 24px;
 }
 
 #booking .seat-status .seat:not(.occupied):hover {
@@ -257,7 +418,7 @@ html {
 }
 
 #booking .screen {
-    background-color: #fff;
+    background-color: var(--white-color);
     display: inline-block;
     width: 100%;
     height: 120px;
@@ -283,8 +444,17 @@ html {
     background-color: green;
 }
 
+#booking .seat.selected.premium {
+    background-color: green;
+    border: 1px solid yellow;
+}
+
 #booking .seat.occupied {
-    background-color: #fff;
+    background-color: var(--white-color);
+}
+
+#booking .seat.premium {
+    background-color: yellow;
 }
 
 #booking .seat:nth-of-type(2) {
@@ -298,4 +468,65 @@ html {
 #booking .seat:not(.occupied):hover {
     cursor: pointer;
     transform: scale(1.2);
+}
+
+#booking .detail {
+    color: var(--white-color);
+    margin: 15px 0;
+}
+
+#booking .detail span {
+    color: #0093E9;
+}
+
+
+/* ============================================               RESPONSIVE             ================================================ */
+
+@media (max-width: 584px) {
+    .modal .user-details .input-box {
+        width: 100%;
+    }
+
+    .modal .gender-details .category {
+        width: 100%;
+    }
+
+    .modal .content .user-details {
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+
+    .modal .content .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}
+
+
+@media (max-width: 850px) {
+    html {
+        /* font-size: 12px; */
+    }
+
+    #header .navigation {
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+        margin: 0;
+        position: absolute;
+        top: -1000px;
+        opacity: 0;
+        transition: all 0.5s ease;
+    }
+
+    #header .navigation.active {
+        background: var(--body-bg);
+        top: 100%;
+        opacity: 1;
+        height: 35vh;
+        font-size: 1.6rem;
+    }
+
+    #header #mobile-menu {
+        display: inline-block;
+    }
 }
