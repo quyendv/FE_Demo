@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MTBS</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/img/popcorn.png">
+
+    <!-- GG font Cario -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!-- APP -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/grid.css">
+    <!-- <link rel="stylesheet" href="./assets/css/app.css"> -->
+</head>
+
+<body>
+    <!-- Header -->
+    <div id="header">
+        <a href="#" class="logo">
+            <i class='logo-icon bx bx-movie-play bx-tada'></i>
+        </a>
+
+        <ul class="navigation">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./index.html#movies">Movies</a></li>
+            <li><a href="./booking.html">Bookings</a></li>
+            <!-- <li class="login-btn js-login-btn"><a>Login</a></li> -->
+            <li class="login-btn js-login-btn"><a href="./login.html">Login</a></li>
+        </ul>
+
+
+        <div class="search-box">
+            <input type="search" name="search-text" id="search-text" placeholder="Find your favorite moive">
+            <span class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+        </div>
+
+        <!-- default display: none -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="toggle-bar"></div>
+            <div class="toggle-bar"></div>
+            <div class="toggle-bar"></div>
+        </div>
+    </div>
+
+    <!-- Modal Login/Register-->
+    <div class="login-register" id="login-register">
+        <!-- Register -->
+        <div class="modal open js-modal register js-register">
+            <div class="modal__container js-modal__container">
+                <!-- icon -->
+                <div class="modal__close-btn js-modal__close-btn">
+                    <a href="./index.html"><i class="fa-solid fa-xmark"></i></a>
+                </div>
+
+                <div class="modal__goback js-login-btn">
+                    <a href="./login.html"><i class='bx bx-arrow-back'></i></a>
+                </div>
+
+                <!-- Title -->
+                <h1 class="heading">Register</h1>
+
+                <!-- Content -->
+                <div class="content">
+                    <form action="">
+                        <div class="user-details">
+                            <div class="input-box">
+                                <label for="" class="info">First Name</label>
+                                <input type="text" placeholder="Enter your first name" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Last Name</label>
+                                <input type="text" placeholder="Enter your last name" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">User Name</label>
+                                <input type="text" placeholder="Enter your username" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Date of Birth</label>
+                                <input type="date" placeholder="Enter your birthday" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Email</label>
+                                <input type="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Phone Number</label>
+                                <input type="tel" placeholder="Enter your number" required pattern="[0-9]{10}">
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Password</label>
+                                <input type="password" placeholder="Enter your password" required>
+                            </div>
+
+                            <div class="input-box">
+                                <label for="" class="info">Confirm Password</label>
+                                <input type="password" placeholder="Confirm your password" required>
+                            </div>
+                        </div>
+
+                        <div class="gender-details">
+                            <input type="radio" name="gender" id="dot-1">
+                            <input type="radio" name="gender" id="dot-2">
+                            <input type="radio" name="gender" id="dot-3">
+
+                            <span class="gender-title">Gender</span>
+
+                            <div class="category">
+                                <label for="dot-1">
+                                    <span class="custom-dot one"></span>
+                                    <span class="gender">Male</span>
+                                </label>
+                                <label for="dot-2">
+                                    <span class="custom-dot two"></span>
+                                    <span class="gender">Female</span>
+                                </label>
+                                <label for="dot-3">
+                                    <span class="custom-dot three"></span>
+                                    <span class="gender">Prefer not to say</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="submit-btn">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main script -->
+    <script src="./assets/javascript/main.js"></script>
+    <!-- APP SCRIPT -->
+    <script src="/assets/javascript/app.js"></script>
+</body>
+
+</html>

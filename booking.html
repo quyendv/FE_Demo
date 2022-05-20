@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Document</title>
+    <title>MTBS</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="./assets/img/popcorn.png">
@@ -36,9 +36,10 @@
 
         <ul class="navigation">
             <li><a href="./index.html">Home</a></li>
-            <li><a href="#movies">Movies</a></li>
+            <li><a href="./index.html#movies">Movies</a></li>
             <li><a href="./booking.html">Bookings</a></li>
-            <li class="login-btn js-login-btn"><a>Login</a></li>
+            <!-- <li class="login-btn js-login-btn"><a>Login</a></li> -->
+            <li class="login-btn"><a href="./login.html">Login</a></li>
         </ul>
 
 
@@ -168,60 +169,86 @@
         </p>
     </div>
 
+    <!-- Footer -->
     <footer id="footer" class="footer grid">
         <div class="row footer-infos">
-            <div class="col l-3 m-3 c-12 footer-info">
-                <a href="#" class="logo">
+            <!-- About -->
+            <div class="col l-3 m-6 c-12 footer-info">
+                <!-- <a href="#" class="logo">
                     <i class='bx bx-movie-play bx-tada main-color'></i><span class="main-color"></span>
-                </a>
+                </a> -->
+                <h2 class="footer-title">About us</h2>
                 <p class="text-des">
-                    Bản quyền thuộc về 5 sinh viên nhóm 10 của lớp học phần Công nghệ phần mềm
-                    (INT2208E-22) thuộc khoa công nghệ thông tin trường đại học công nghệ- đại học quốc gia Hà Nội
+                    Software Engineering subject project (INT2208E-22) of students in group 10, Faculty of Information Technology, University of Engineering and Technology - Vietnam National University, Hanoi. This software is intended to help you easily book movie tickets at home.
                 </p>
                 <div class="socical-list">
-                    <a href="#" class="social-item">
-                        <i class="bx bxl-facebook"></i>
-                    </a>
-                    <a href="#" class="social-item">
-                        <i class="bx bxl-instagram"></i>
-                    </a>
+                    <a href="#" class="social-item"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-item"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-item"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-item"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-            <div class="col l-3 m-3 c-12 footer-info">
-                <h2 class="footer-heading">Chịu trách nhiệm sản xuất</h2>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="https://github.com/dawnpanpan" class="footer-item-link personal">Đào Trọng Đăng</a>
+
+            <!-- Team members -->
+            <div class="col l-3 m-6 c-12 footer-info">
+                <h2 class="footer-title">Team members</h2>
+                <ul class="members-list">
+                    <li class="member-item">
+                        <a href="https://github.com/dawnpanpan" class="member-item-link personal">Đào Trọng Đăng</a>
                     </li>
-                    <li class="footer-item">
-                        <a href="https://github.com/quyendv" class="footer-item-link personal">Đào Văn Quyền</a>
+                    <li class="member-item">
+                        <a href="https://github.com/quyendv" class="member-item-link personal">Đào Văn Quyền</a>
                     </li>
-                    <li class="footer-item">
-                        <a href="https://github.com/duytv2501" class="footer-item-link personal">Trần Văn Duy</a>
+                    <li class="member-item">
+                        <a href="https://github.com/duytv2501" class="member-item-link personal">Trần Văn Duy</a>
                     </li>
-                    <li class="footer-item">
-                        <a href="https://github.com/nguyenhieu12" class="footer-item-link personal">Nguyễn Minh
+                    <li class="member-item">
+                        <a href="https://github.com/nguyenhieu12" class="member-item-link personal">Nguyễn Minh
                             Hiếu</a>
                     </li>
-                    <li class="footer-item">
-                        <a href="https://github.com/tuantuan4" class="footer-item-link personal">Lê Anh Tuấn</a>
+                    <li class="member-item">
+                        <a href="https://github.com/tuantuan4" class="member-item-link personal">Lê Anh Tuấn</a>
                     </li>
                 </ul>
             </div>
-            <div class="col l-3 m-3 c-12 footer-info">
-                <h2 class="footer-heading">Hợp tác</h2>
-            </div>
-            <div class="col l-3 m-3 c-12 footer-info">
-                <h2 class="footer-heading">Chăm sóc khách hàng</h2>
-                <ul class="footer-list">
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link personal">Trung tâm trợ giúp</a>
+
+            <!-- Address -->
+            <div class="col l-3 m-6 c-12 footer-info">
+                <h2 class="footer-title">Address</h2>
+                <ul class="address-infos">
+                    <li class="address-info">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span class="address-details">Cầu Giấy, Hà Nội, Việt Nam</span>
                     </li>
-                    <li class="footer-item">
-                        <a href="" class="footer-item-link personal">Chăm sóc khách hàng</a>
+                    <li class="address-info">
+                        <i class="fa-solid fa-phone"></i>
+                        <span class="address-details">+84 xxx xxx xxx</span>
+                    </li>
+                    <li class="address-info">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span class="address-details">abc@example.com</span>
                     </li>
                 </ul>
             </div>
+
+            <!-- Contact -->
+            <div class="col l-3 m-6 c-12 footer-info">
+                <h2 class="footer-title">Contact</h2>
+                <form action="" class="form-contact">
+                    <div class="contact-box">
+                        <label for="">Email *</label>
+                        <input type="email" name="" id="" required>
+                    </div>
+
+                    <div class="contact-box">
+                        <label for="">Message *</label>
+                        <textarea rows="3" required></textarea>
+                    </div>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
         </div>
     </footer>
 
