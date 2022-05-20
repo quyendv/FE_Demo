@@ -27,6 +27,10 @@ $(document).ready(() => {
         autoplayHoverPause: true,
         smartSpeed: 1000,
         responsive: {
+            300: {
+                items: 1
+            },
+
             500: {
                 items: 3
             },

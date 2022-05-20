@@ -289,6 +289,7 @@ img {
     border-radius: 40px;
     background-color: red;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 #header .search-box #search-text {
@@ -551,7 +552,7 @@ footer {
 
 .modal {
     position: fixed;
-    top: 0;
+    top: var(--header-height);
     right: 0;
     left: 0;
     bottom: 0;
