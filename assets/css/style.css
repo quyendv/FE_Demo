@@ -16,14 +16,13 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 html {
-    box-sizing: border-box;
+    font-size: 16px;
     scroll-behavior: smooth;
     font-family: 'Cario', Arial, sans-serif;
-    /* font-size: 16px; */
 }
 
 a {
@@ -53,12 +52,6 @@ img {
 
 }
 
-.container {
-    max-width: 1920px;
-    padding: 0 40px;
-    margin: auto;
-}
-
 .btn {
     color: whitesmoke;
     padding: 0.25rem 1.5rem;
@@ -73,7 +66,7 @@ img {
 
 /* hieu ung button login */
 .btn-hover::before {
-    z-index: 1;
+    z-index: -1;
     content: "";
     position: absolute;
     top: 0;
@@ -118,7 +111,6 @@ img {
     margin-left: 5px;
 }
 
-
 .item-content-description {
     font-size: 1.2rem;
     margin-top: var(--space-top);
@@ -126,7 +118,7 @@ img {
 }
 
 .item-action {
-    margin-top: var(--space-top);
+    
 }
 
 .item-action~.item-action {
@@ -134,6 +126,7 @@ img {
 }
 
 .item-action span {
+    padding-left: 5px;
     min-width: fit-content;
 }
 
@@ -209,7 +202,8 @@ img {
 .combo-button {
     display: flex;
     align-items: center;
-    /* padding: 0 40px; */
+    justify-content: left;
+    margin-top: var(--space-top);
 }
 
 /* ******************************************************** */
@@ -380,6 +374,7 @@ img {
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
 }
 
 .hero-slide-item-content {
@@ -422,6 +417,28 @@ img {
 /*          ***********  Movies Section  **********         */
 /* ******************************************************** */
 
+.movies-section-title {
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    background: url(/assets/img/movie-section-title2.gif) left center repeat-x scroll #fcfcf0;
+    margin: 10px 0 25px;
+}
+
+.movies-section-title::after {
+    content: '';
+    display: inline-block;
+    background: url(/assets/img/movie-section-title1.gif) center center / 406px 41px no-repeat scroll;
+    width: 500px;
+    height: 60px;
+}
+
+.movies-section-container {
+    max-width: 1920px;
+    padding: 0 40px 25px;
+    margin: auto;
+}
+
 .movie-item {
     display: block;
     position: relative;
@@ -440,7 +457,6 @@ img {
 
 .movie-item:hover img {
     transform: scale(1.1);
-
 }
 
 .movie-item-content {
@@ -448,7 +464,7 @@ img {
     bottom: 0;
     left: 0;
     width: 100%;
-    padding: 5px;
+    padding: 5px 5px 5px 10px;
     background-color: rgba(0, 0, 0, 0.8);
 }
 
@@ -467,23 +483,166 @@ img {
     font-size: 1.5rem;
     position: relative;
     font-weight: 700;
-
 }
 
-
-.movies-section-title {
-    text-align: center;
-    width: 100%;
-    height: 60px;
-    background: url(/assets/img/movie-section-title2.gif) left center repeat-x scroll #fcfcf0;
+.movie-item .combo-button {
+    /* justify-content: space-between; */
 }
 
-.movies-section-title::after {
-    content: '';
+.movie-item .item-action span {
+    font-size: 0.8rem;
+}
+
+/* ******************************************************** */
+/*       *********  Movie-Details Section  ********         */
+/* ******************************************************** */
+
+.movie-details-section {
+    margin-top: var(--header-height);
+    background-color: #fcfcf0;
+    /* height: 60vh; */
+}
+
+.movie-details-section .page-title {
+    padding: 20px 0;
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000;
+}
+
+.movie-details-content {
+    /* margin-top: 20px; */
+}
+
+.movie-image {
+    margin-top: 20px;
+}
+
+.movie-details-property {
+    margin-top: 20px;
+}
+
+.movie-details-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #666;
+}
+
+.movie-details-infos {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+.movie-details-info {
+    padding: 3px 0;
+}
+
+.movie-details-info label {
     display: inline-block;
-    background: url(/assets/img/movie-section-title1.gif) center center / 406px 41px no-repeat scroll;
-    width: 500px;
-    height: 60px;
+    font-weight: 700;
+    width: 95px;
+}
+
+.movie-details-info span {
+    padding-left: 8px;
+}
+
+.movie-details-info:last-of-type span{
+    font-weight: 700;
+}
+
+.movie-details-options {
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+}
+
+.movie-details-options .buy-ticket {
+    color: var(--text-color);
+    background-color: red;
+    padding: 5px 8px;
+    border-radius: 4px;
+    margin-right: 5rem;
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.movie-details-options .buy-ticket:hover {
+    transform: translateY(-3px);
+}
+
+.movie-details-options .buy-ticket i {
+    padding-right: 2px;
+}
+
+.movie-details-options ul {
+    list-style-type: none;
+    display: flex;
+    background-color: red;
+    color: var(--text-color);
+}
+
+.movie-details-options .option-item {
+    padding: 5px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.movie-details-options .option-item:hover {
+    transform: translateY(-2px);
+}
+
+.movie-details-options .option-item > i {
+    font-size: 0px; /* or display none */
+}
+
+.movie-details-options .option-item.active {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.movie-details-options .option-item.active > i{
+    font-size: 16px; /* or display inline-block */
+    transition: all 0.3s ease-in-out;
+}
+
+.movie-details-options .option-item1 {
+    position: relative;
+}
+
+.movie-details-options .option-item1::after {
+    content: '';
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 1px;
+    bottom: 0;
+    background-color: var(--text-color);
+}
+
+.movie-details-des {
+    padding: 20px 0 30px;
+}
+
+.movie-details-des .text-des {
+    color: black;
+    font-size: 1rem;
+    display: none;
+}
+
+.movie-details-des .text-des.active {
+    display: block;
+}
+
+.movie-details-des .trailer-des {
+    display: none;
+}
+
+.movie-details-des .trailer-des.active {    /* ifram: khi width nhỏ iframe nó đẩy width của trang rộng thêm. 1 là 
+                                            sửa ở meida, 2 là dùng max-width */
+    display: block;
+    max-width: 99vw;
 }
 
 /* ******************************************************** */
@@ -497,33 +656,57 @@ footer {
 
 .footer-infos {
     padding-top: 40px;
-    text-align: center;
+    text-align: left;
 }
 
 .footer-info {
     margin-top: 20px;
     margin-bottom: 30px;
+    padding-left: 6rem !important;
 }
 
 .footer-title {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     position: relative;
+    padding-left: 5px;
+    display: inline-block;  
+}
+
+.footer-title:before { 
+    content: '';
+    position: absolute;
+    top: calc(150% + 1.5px); 
+    left: 0;
+    width: 20px;
+    height: 5px;
+    transform: translateY(-50%); 
+    background-color: rgba(255, 0, 0, 1);
+    border-radius: 4px;
+    animation: moveRight 2s linear infinite alternate-reverse;
+}
+
+@keyframes moveRight {
+    0% {
+        left: 0px;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 .footer-title:after {   
     content: '';
     position: absolute;
-    top: 110%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 30%;
-    height: 2px;
-    background-color: red;
+    top: 150%;
+    left: 0;
+    width: 110%;
+    height: 3px;
+    background-color: rgba(255, 0, 0, 0.6);
 }
 
 .text-des {
     color: #666;
-    padding: 5px;
+    /* padding: 5px; */
     line-height: 1.4;
     font-size: 1.1rem;
 }
@@ -590,13 +773,13 @@ footer {
 
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     margin-top: 35px;
 }
 
 .address-info {
-    width: 65%;
+    /* width: 100%; */
     text-align: left;
 }
 
@@ -612,7 +795,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-self: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .contact-box {
@@ -648,6 +831,24 @@ footer {
     background-color: red;
     color: var(--text-color);
     padding: 8px 0;
+}
+
+.copyright {
+    text-align: center;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.copyright::before {
+    content: '';
+    position: absolute;
+    left: 10%;
+    top: -120%;
+    right: 10%;
+    height: 1px;
+    background-color: #fff;
 }
 
 /* ******************************************************** */
@@ -837,9 +1038,6 @@ footer {
     }
 }
 
-/* ******************************************************** */
-/*                   *****  Movie  *****                    */
-/* ******************************************************** */
 
 
 
@@ -965,7 +1163,98 @@ footer {
 }
 
 
-/* ============================================               RESPONSIVE             ================================================ */
+/* ******************************************************** */
+/*                 *******  Payment  *******                */
+/* ******************************************************** */
+
+.payment-section {
+    margin-top: var(--header-height);
+    background-color: var(--box-bg);
+    padding: 30px 0;
+    min-height: 60vh;
+}
+
+.payment-section-wrapper {
+    background-color: #fdf7dd;
+}
+
+.payment-section-container {
+    padding: 0 30px;
+    font-size: 1rem;
+    min-height: 50vh;
+}
+
+.payment-section-container > * {
+    padding: 50px 0;
+}
+
+.payment-content {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.payment-movie-infos {
+    line-height: 1.4;
+}
+
+.payment-movie-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.payment-movie-date, .payment-movie-time {
+    font-size: 1rem;
+}
+
+.cinema-name, .payment-room-info label, .payment-price label {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #555;
+    display: inline-block;
+    padding: 6px 0;
+}
+
+.payment-movie-room {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.payment-room-info {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% / 2 - 20px);
+}
+
+.payment-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-price i {
+    margin: 0 6px;
+}
+
+.payment-action {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-action p span {
+    font-weight: 600;
+}
+
+.payment-action i {
+    margin-right: 10px;
+}
+
+/* ========================        RESPONSIVE       =================================== */
 
 @media only screen and (max-width: 1280px) {
     html {
@@ -1040,6 +1329,47 @@ footer {
     }
 }
 
+@media (max-width: 740px) {
+    .footer-infos {
+        text-align: center;
+    }
+
+    .footer-info {
+        padding-left: 0 !important;
+    }
+
+    .footer-infos:first-child .text-des {
+        padding: 0 20px;
+    }
+    
+    .footer-info:nth-of-type(3) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .footer-info:nth-of-type(4) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .form-contact {
+        width: 80%;
+    }
+
+    .form-contact > * {
+        width: 100% !important;
+    }
+
+    .footer-info .address-infos {
+        width: fit-content;
+        align-items: left;
+    }
+}
+
 @media (max-width: 584px) {
     .modal .user-details .input-box {
         width: 100%;
@@ -1056,5 +1386,12 @@ footer {
 
     .modal .content .user-details::-webkit-scrollbar {
         width: 0;
+    }
+}
+
+/* movie-details */
+@media (max-width: 450px) {
+    .movie-details-container > *{
+        padding-left: 12px !important;
     }
 }

@@ -41,7 +41,5 @@ $(document).ready(() => {
                 items: 6
             }
         }
-    })
-
-    
+    })    
 })

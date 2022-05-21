@@ -95,6 +95,10 @@
     max-width: 100%;
 }
 
+.c-o-0 {
+    margin-left: 0%;
+}
+
 .c-o-1 {
     margin-left: 8.33333%;
 }
@@ -230,6 +234,10 @@
         max-width: 100%;
     }
 
+    .m-o-0 {
+        margin-left: 0%;
+    }
+    
     .m-o-1 {
         margin-left: 8.33333%;
     }
@@ -382,6 +390,10 @@
         max-width: 100%;
     }
 
+    .l-o-0 {
+        margin-left: 0%;
+    }
+    
     .l-o-1 {
         margin-left: 8.33333%;
     }
